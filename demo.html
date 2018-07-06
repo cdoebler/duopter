@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <title>DuOpter (Alter) Demo</title>
+    <script src="duopter.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            if (!DuOpter.isOptedOut("duopterdemo")) {
+                DuOpter
+                    .loadStyle("https://yourdomain.com/path/to/stylesheet.css") // Load styles (optional)
+                    .loadScript( // Load script (optional)
+                        "https://yourdomain.com/path/to/javascript.js",
+                        function () { // optional callback
+                            // Put callback code here
+                            // alert("Javascript has been loaded.");
+                        }
+                    );
+
+                // Put Javascript here that should be executed, when status == opted in
+                // console.log("Loaded");
+            }
+        });
+    </script>
+</head>
+<body>
+<a href="javascript:DuOpter.optIn('duopterdemo', {alert:'Opted in'})">Opt in</a><br>
+<a href="javascript:DuOpter.optOut('duopterdemo', {killcookies: ['duopterdemo_status'], alert:'Opted out'})">Opt out</a><br>
+</body>
+</html>
