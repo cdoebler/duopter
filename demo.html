@@ -5,7 +5,7 @@
     <script src="duopter.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function (event) {
-            if (!DuOpter.isOptedOut("duopterdemo")) {
+            if (DuOpter.isOptedIn("duopterdemo")) {
                 DuOpter
                     .loadStyle("https://yourdomain.com/path/to/stylesheet.css") // Load styles (optional)
                     .loadScript( // Load script (optional)
